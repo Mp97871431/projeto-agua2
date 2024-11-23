@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projeto faculdade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body id="s">
+    <header id="s">
+        <h1>Faça seu teste </h1>
+    </header>
+    <section id="s">
+        coloque seu nome: <input type="text" name="nome" id="nome"><br>
+        coloque o consumo de agua: <input type="number" name="agua" id="agua"><br>
+        <input type="button" value="calcular" onclick="verificar()">
+        <div id="res">
+
+        </div>
+    </section>
+
+    <script>
+        function verificar(){
+           var nome = window.document.getElementById('nome')
+           var num = window.document.getElementById('agua')
+           var res = window.document.getElementById('res')
+           var numero = Number(num.value)
+           if(numero < 6000){
+            res.innerHTML = `<p> Parabéns seu consumo de água é de ${numero} litros, e o ideal para cada residencia é de 6000 Litros, continue assim, pois assim ira ajudar o meio ambiente e a sociedade em geral`
+            document.body.style.backgroundColor='#03c003'
+           }else{
+            res.innerHTML +=`<p>Que pena, seu consumo de água é de ${numero} Litros, o ideal é de 6000 Litros por residencia. Mas não tem problema pois temos soluções para isso, basta entrar em contato com o telefone da SABESP e tera todas as dicas de com economizar.</p>`
+            document.body.style.backgroundColor ='#bb2e2e'
+           }
+}
+    </script>
+</body>
+</html>
